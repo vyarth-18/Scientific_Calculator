@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="calc.js"></script>
+</head>
+<body>
+    <input type="text" id="display" class="display" disabled>
+<div class="group-right">
+    <div class="splitleft">
+    <button onclick="append('7')">7</button>
+    <button onclick="append('8')">8</button>
+    <button onclick="append('9')">9</button>
+    <button onclick="clear()">AC</button>
+    <button onclick="">DEL</button>
+    <br>
+    <button onclick="append('4')">4</button>
+    <button onclick="append('5')">5</button>
+    <button onclick="append('6')">6</button>
+    <button onclick="appent_op('*')">*</button>   
+    <button onclick="appent_op('/')">/</button>
+    <br>
+    <button onclick="append('1')">1</button>
+    <button onclick="append('2')">2</button>
+    <button onclick="append('3')">3</button>
+    <button onclick="appent_op('+')">+</button>   
+    <button onclick="appent_op('-')">-</button>
+    <br>
+    <button onclick="append('7')">0</button>
+    <button onclick="append('7')">.</button>
+    <button onclick="append('7')">x10^x</button>
+    <button onclick="append('7')">ANS</button>
+    <button onclick="calculate()">=</button>
+</div></div>
+<div class="group-right">
+    <div class="splitright">
+    <br>
+    <button >(</button>
+    <button >)</button>
+    <button>sin</button>
+    <button>cos</button>
+    <button>tan</button>
+    <br>
+    <button>log</button>
+    <button>ln</button>
+    <button>cosec</button>
+    <button>sec</button>
+    <button>cot</button>
+    <br>
+    <button>pi</button>
+    <button>e</button>
+    <button>sinh</button>
+    <button>cosh</button>
+    <button>tanh</button>
+    <br>
+    <button>x^</button>
+    <button>x^2</button>
+    <button>csech</button>
+    <button>sech</button>
+    <button>tanh</button>
+    <br>
+    <button>x!</button>
+</div></div>
+</body>
+</html>
+

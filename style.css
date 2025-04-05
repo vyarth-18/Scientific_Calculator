@@ -1,0 +1,73 @@
+.splitleft
+{
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+}
+.splitright 
+{
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 48%;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    margin-top: 5%;
+}
+.display
+{
+    background-color: #ade7f4;
+    height: 140px;
+    width: 45%;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+h1 
+{
+    background-color: navy;
+    font-size: 6em;
+    padding: 2%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 45%;
+}
+.button 
+{
+    font-family: monospace;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.group-right button
+{
+    right: 0;
+    align-items: right;
+    background-color: #69e3c5; /* Green background */
+    color: rgb(12, 15, 10); /* White text */
+    border: none;
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 15px;
+    margin-top: 10px;
+    display: i ;
+    width: 15%;
+}
+button:hover
+{
+    background-color: #00b7ff;
+}
+button:active
+{
+    background-color: #e1ff00;
+}
+body
+{
+    margin-top: 5%;
+    margin-left:5%;
+}
