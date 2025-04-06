@@ -37,7 +37,8 @@ function calculate()
         case '/':
             if (current === 0) {
             alert("Cannot divide by zero");
-            return;
+            return;}
+            else{
             result=previous/current; }
             break;
         default:
@@ -45,6 +46,6 @@ function calculate()
     }
     current_input=result.toString();
     previous_input='';
-    current_operation='';   
-    document.getElementById('display').current_input();
+    current_operation='';  
+    document.getElementById('display').value=`${result}`;
 }
