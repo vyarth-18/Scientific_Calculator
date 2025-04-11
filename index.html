@@ -15,7 +15,7 @@
     <button onclick="append('8')">8</button>
     <button onclick="append('9')">9</button>
     <button onclick="clearDisplay()">AC</button>
-    <button onclick="del()">DEL</button>
+    <button onclick="backspace()">DEL</button>
     <br>
     <button onclick="append('4')">4</button>
     <button onclick="append('5')">5</button>
@@ -31,15 +31,15 @@
     <br>
     <button onclick="append('0')">0</button>
     <button onclick="append('.')">.</button>
-    <button onclick="append('7')">x10^x</button>
-    <button onclick="append('')">ANS</button>
+    <button onclick="tenRaise()">x10^x</button>
+    <button onclick="ans()">ANS</button>
     <button onclick="calculate()">=</button>
 </div></div>
 <div class="group-right">
     <div class="splitright">
     <br>
-    <button >(</button>
-    <button >)</button>
+    <button onclick="leftBracket()">(</button>
+    <button onclick="rightBracket()">)</button>
     <button>sin</button>
     <button>cos</button>
     <button>tan</button>

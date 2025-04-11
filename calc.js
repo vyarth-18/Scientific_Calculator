@@ -60,3 +60,37 @@ function clearDisplay(){
     result='';
     document.getElementById('display').value='0';
 }
+function ans(){
+    current_input=result.toString();
+    document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
+}
+function backspace(){
+    current_input=current_input.slice(0,-1);
+    if(current_input===''){
+        current_input='0';
+        document.getElementById('display').value=`${previous_input} ${current_operation}`;
+    }
+    else{
+        document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
+    }
+}
+function tenRaise(){
+    if(current_input===''){
+        current_input= Math.pow(10, x);
+        document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
+
+        document.getElementById('display').value=`${previous_input} ${current_operation}`;
+    }
+}
+function leftBracket(){
+    if(current_input===''){
+        current_input='(';
+        document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
+    }
+}
+function rightBracket(){
+    if(current_input===''){
+        current_input=')';
+        document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
+    }
+}
