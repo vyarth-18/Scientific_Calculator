@@ -14,8 +14,6 @@ This calculator isn’t just about `2 + 2 = 4` — it’s got *skills*:
 📐 Trig functions: `sin`, `cos`, `tan`, etc.  
 🔢 Powers and roots: `x²`, `√x`, `x^y`  
 🧮 Logs and natural logs: `log`, `ln`  
-🔁 Memory buttons so you can pretend you’re doing serious work  
-📱 Mobile-friendly so you can calculate on the go (like at a party... if you're that cool)
 
 ---
 
@@ -66,7 +64,7 @@ Pull requests are always welcome – even if it's just adding a 🦄 somewhere.
 
 ## 📝 License
 
-This project is under the [MIT License](LICENSE).  
+This project is under the [GNU License](LICENSE).  
 So yeah, go wild. Just don’t sell it and say you invented math.
 
 ---
