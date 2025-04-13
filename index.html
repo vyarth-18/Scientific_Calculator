@@ -31,7 +31,7 @@
     <br>
     <button onclick="append('0')">0</button>
     <button onclick="append('.')">.</button>
-    <button onclick="tenRaise()">x10^x</button>
+    <button onclick="append_op('*10^[')">x10^x</button>
     <button onclick="ans()">ANS</button>
     <button onclick="calculate()">=</button>
 </div></div>
@@ -40,29 +40,31 @@
     <br>
     <button onclick="leftBracket()">(</button>
     <button onclick="rightBracket()">)</button>
-    <button>sin</button>
-    <button>cos</button>
-    <button>tan</button>
+    <button onclick="append_op('sin[')">sin</button>
+    <button onclick="append_op('cos[')">cos</button>
+    <button onclick="append_op('tan[')">tan</button>
     <br>
     <button>log</button>
     <button>ln</button>
-    <button>cosec</button>
-    <button>sec</button>
-    <button>cot</button>
+    <button onclick="append_op('csc[')">cosec</button>
+    <button onclick="append_op('sec[')">sec</button>
+    <button onclick="append_op('cot[')">cot</button>
     <br>
     <button>pi</button>
     <button>e</button>
-    <button>sinh</button>
-    <button>cosh</button>
-    <button>tanh</button>
+    <button onclick="append_op('sinh[')">sinh</button>
+    <button onclick="append_op('cosh[')">cosh</button>
+    <button onclick="append_op('tanh[')">tanh</button>
     <br>
     <button>x^</button>
     <button>x^2</button>
-    <button>csech</button>
-    <button>sech</button>
-    <button>tanh</button>
+    <button onclick="append_op('csech[')">csech</button>
+    <button onclick="append_op('sech[')">sech</button>
+    <button onclick="append_op('coth[')">coth</button>
     <br>
     <button>x!</button>
+    <button onclick="append_op('sqrt[')">sqrt(x)</button>
+    <button onclick="append_op('abs[')">|x|</button>
 </div></div>
 </body>
 </html>

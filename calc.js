@@ -1,22 +1,29 @@
+
 let current_input='';
 let previous_input='';
 let current_operation='';
 let result='';
-function append(number)
+function append(value)
 {
-    current_input += number;
+    current_input += value;
     document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
 }
 function append_op(operator)
 {
-    if(current_input==='')
-      return;
+    if((operator=='-' || operator=='+')){
+        current_input+=operator;//to do -3+5=2
+        document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
+        return;
+    }
     else if(previous_input !== '' && current_input !== '')
         calculate();
     current_operation=operator;
     previous_input=current_input;
     current_input='';
     document.getElementById('display').value=`${previous_input} ${current_operation}`;
+}
+function toRadian(degree) {
+    return degree * (Math.PI / 180);
 }
 function calculate()
 {
@@ -41,6 +48,60 @@ function calculate()
             return;}
             else{
             result=previous/current; }
+            break;
+        case 'sin[':
+            current_input=toRadian(current_input);
+            result=Math.sin(current_input);
+            break;
+        case 'cos[':
+            current_input=toRadian(current_input);
+            result=Math.cos(current_input);
+            break;
+        case 'tan[':
+            current_input=toRadian(current_input);
+            result=Math.tan(current_input);
+            break;
+        case 'csc[':
+            current_input=toRadian(current_input);
+            result=1/Math.sin(current_input);
+            break;
+        case 'sec[':
+            current_input=toRadian(current_input);
+            result=1/Math.cos(current_input);
+            break;
+        case 'cot[':
+            current_input=toRadian(current_input);
+            result=1/Math.tan(current_input);
+            break;
+//No, hyperbolic functions like Math.sinh(), Math.cosh(), and Math.tanh() in JavaScript do NOT require degrees or 
+//radians — they take their input in raw numeric form, which is already in radians.
+        case 'sinh[':
+            //current_input=toRadian(current_input); not needed
+            result=Math.sinh(current_input);
+            break;
+        case 'cosh[':
+            result=Math.cosh(current_input);
+            break;
+        case 'tanh[':
+            result=Math.tanh(current_input);
+            break;
+        case 'csech[':
+            result=1/Math.sinh(current_input);
+            break;
+        case 'sech[':
+            result=1/Math.cosh(current_input);
+            break;
+        case 'coth[':
+            result=1/Math.tanh(current_input);
+            break;
+        case 'abs[':
+            result=Math.abs(current_input);
+            break;
+        case 'sqrt[':
+            result=Math.sqrt(current_input);
+            break;
+        case '*10^[':
+            result=Math.pow(10, current_input);
             break;
         default:
             return;
@@ -74,6 +135,10 @@ function backspace(){
         document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
     }
 }
+ //doesent work below
+ // if value is to big, use toExponential(deciamlPlacesUWant)   Returns a number 
+ // written in exponential notation. toFixed(deciamlPlacesUWant) Returns a number 
+ // written with a number of decimals, 0 gives estimated value.
 function tenRaise(){
     if(current_input===''){
         current_input= Math.pow(10, x);
@@ -93,4 +158,39 @@ function rightBracket(){
         current_input=')';
         document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
     }
+}
+function absolute(){
+if(current_input===''){
+    document.getElementById('display').value="abs(";
+   // current_input='abs(';
+    append(num);
+    current_input=Math.abs(num);
+    document.getElementById('display').value=`${current_input}`;
+}
+}
+function trignometric(operator){
+    switch(operator){
+        case 'sin':
+            current_input=Math.sin(current_input);
+            break;
+        case 'cos':
+            current_input=Math.cos(current_input);
+            break;
+        case 'tan':
+            current_input=Math.tan(current_input);
+            break;
+        case 'csc':
+            current_input=1/Math.sin(current_input);
+            break;
+        case 'sec':
+            current_input=1/Math.cos(current_input);
+            break;
+        case 'cot':
+            current_input=1/Math.tan(current_input);
+            break;
+        default:
+            return;
+    }
+    document.getElementById('display').value=`${current_input}`;
+    current_input='';
 }
