@@ -6,13 +6,13 @@ let result='';
 function append(value)
 {
     current_input += value;
-    document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
+    document.getElementById('display').value=`${previous_input}${current_operation}${current_input}`;
 }
 function append_op(operator)
 {
     if((operator=='-' || operator=='+')){
         current_input+=operator;//to do -3+5=2
-        document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
+        document.getElementById('display').value=`${previous_input}${current_operation}${current_input}`;
         return;
     }
     else if(previous_input !== '' && current_input !== '')
@@ -20,7 +20,7 @@ function append_op(operator)
     current_operation=operator;
     previous_input=current_input;
     current_input='';
-    document.getElementById('display').value=`${previous_input} ${current_operation}`;
+    document.getElementById('display').value=`${previous_input}${current_operation}`;
 }
 function toRadian(degree) {
     return degree * (Math.PI / 180);
@@ -29,6 +29,25 @@ function calculate()
 {
     if(current_input==='')
         return;
+    else if(operator==='!'){//factorial works but at what cost?
+        if(previous_input!==''){
+            previous_input=parseInt(previous_input);
+            if(isNaN(previous_input) || previous_input<0){
+                alert("Error");
+                return;
+            }
+            else{
+                let fact=1;
+                for(let i=previous_input;i>0;i--){
+                    fact*=i; }
+            result=fact.toString();
+            }
+        }
+        current_input=result.toString();
+        previous_input='';
+        current_operation='';  
+        document.getElementById('display').value=`${result}`;
+    }
     let previous=parseFloat(previous_input);
     let current=parseFloat(current_input);
     switch(current_operation){
@@ -103,6 +122,18 @@ function calculate()
         case '*10^[':
             result=Math.pow(10, current_input);
             break;
+        case 'log[':
+            result=Math.log10(current_input);
+            break;
+        case 'ln[':
+            result=Math.log(current_input);
+            break;
+        case 'logx[': //Wait for logxy
+            result=Math.log(current_input)/Math.log(previous_input);
+            break;  
+        case '^2':
+            result=Math.pow(previous_input,2);
+            break;
         default:
             return;
     }
@@ -139,14 +170,7 @@ function backspace(){
  // if value is to big, use toExponential(deciamlPlacesUWant)   Returns a number 
  // written in exponential notation. toFixed(deciamlPlacesUWant) Returns a number 
  // written with a number of decimals, 0 gives estimated value.
-function tenRaise(){
-    if(current_input===''){
-        current_input= Math.pow(10, x);
-        document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
 
-        document.getElementById('display').value=`${previous_input} ${current_operation}`;
-    }
-}
 function leftBracket(){
     if(current_input===''){
         current_input='(';
