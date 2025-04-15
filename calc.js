@@ -2,34 +2,34 @@
 let current_input='';
 let previous_input='';
 let current_operation='';
-let result='';
+let result='';  //for debugging, put all values 0 or something
 function append(value)
 {
     current_input += value;
-    document.getElementById('display').value=`${previous_input}${current_operation}${current_input}`;
+    document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
 }
 function append_op(operator)
-{
-    if((operator=='-' || operator=='+')){
+{ 
+    if((operator=='-' || operator=='+') && (current_input==='' && previous_input==='')){  
         current_input+=operator;//to do -3+5=2
-        document.getElementById('display').value=`${previous_input}${current_operation}${current_input}`;
+        document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
         return;
     }
-    else if(previous_input !== '' && current_input !== '')
+     if(previous_input !== '' && current_input !== '')
         calculate();
     current_operation=operator;
     previous_input=current_input;
     current_input='';
-    document.getElementById('display').value=`${previous_input}${current_operation}`;
+    document.getElementById('display').value=`${previous_input} ${current_operation}`;
 }
 function toRadian(degree) {
     return degree * (Math.PI / 180);
 }
 function calculate()
 {
-    if(current_input==='')
+     /*if(pre==='')
         return;
-    else if(operator==='!'){//factorial works but at what cost?
+   else if(operator==='!'){//factorial works but at what cost?
         if(previous_input!==''){
             previous_input=parseInt(previous_input);
             if(isNaN(previous_input) || previous_input<0){
@@ -47,7 +47,8 @@ function calculate()
         previous_input='';
         current_operation='';  
         document.getElementById('display').value=`${result}`;
-    }
+    }*/
+    
     let previous=parseFloat(previous_input);
     let current=parseFloat(current_input);
     switch(current_operation){
@@ -67,6 +68,9 @@ function calculate()
             return;}
             else{
             result=previous/current; }
+            break;
+        case '%':
+            result=previous%current;
             break;
         case 'sin[':
             current_input=toRadian(current_input);
@@ -120,7 +124,7 @@ function calculate()
             result=Math.sqrt(current_input);
             break;
         case '*10^[':
-            result=Math.pow(10, current_input);
+            result=previous_input*Math.pow(10, current_input);
             break;
         case 'log[':
             result=Math.log10(current_input);
@@ -182,39 +186,4 @@ function rightBracket(){
         current_input=')';
         document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
     }
-}
-function absolute(){
-if(current_input===''){
-    document.getElementById('display').value="abs(";
-   // current_input='abs(';
-    append(num);
-    current_input=Math.abs(num);
-    document.getElementById('display').value=`${current_input}`;
-}
-}
-function trignometric(operator){
-    switch(operator){
-        case 'sin':
-            current_input=Math.sin(current_input);
-            break;
-        case 'cos':
-            current_input=Math.cos(current_input);
-            break;
-        case 'tan':
-            current_input=Math.tan(current_input);
-            break;
-        case 'csc':
-            current_input=1/Math.sin(current_input);
-            break;
-        case 'sec':
-            current_input=1/Math.cos(current_input);
-            break;
-        case 'cot':
-            current_input=1/Math.tan(current_input);
-            break;
-        default:
-            return;
-    }
-    document.getElementById('display').value=`${current_input}`;
-    current_input='';
 }

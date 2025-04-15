@@ -21,7 +21,7 @@ This calculator isn’t just about `2 + 2 = 4` — it’s got *skills*:
 
 1. **Clone this bad boy**  
    ```bash
-   git clone https://github.com/yourusername/scientific-calculator.git
+   git clone https://github.com/vyarth-18/Scientific_Calculator.git
    cd scientific-calculator
    ```
 

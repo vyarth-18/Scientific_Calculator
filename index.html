@@ -8,6 +8,7 @@
     <script src="calc.js"></script>
 </head>
 <body>
+    <h1>Scientific Calculator</h1>
     <input type="text" id="display" class="display" disabled>
 <div class="group-right">
     <div class="splitleft">
@@ -31,7 +32,7 @@
     <br>
     <button onclick="append('0')">0</button>
     <button onclick="append('.')">.</button>
-    <button onclick="append_op('*10^[')">x10^x</button>
+    <button onclick="append_op('%')">%</button>
     <button onclick="ans()">ANS</button>
     <button onclick="calculate()">=</button>
 </div></div>
@@ -51,21 +52,25 @@
     <button onclick="append_op('cot[')">cot</button>
     <br>
     <button onclick="append_op('logx[')"><sub>x</sub>log<sup>y</sup></button>
-    <button>e</button>
+    <button onclick="append('2.71828')">e</button>
     <button onclick="append_op('sinh[')">sinh</button>
     <button onclick="append_op('cosh[')">cosh</button>
     <button onclick="append_op('tanh[')">tanh</button>
     <br>
     <button>x^</button>
-    <button>pi</button>
+    <button onclick="append('3.141')">pi</button>
     <button onclick="append_op('csech[')">csech</button>
     <button onclick="append_op('sech[')">sech</button>
     <button onclick="append_op('coth[')">coth</button>
     <br>
-    <button onclick="append_op('!')">fact(x</button>
-    <button onclick="append_op('^2')">x^2</button>
-    <button onclick="append_op('sqrt[')">sqrt(x)</button>
     <button onclick="append_op('abs[')">|x|</button>
+    <button onclick="append_op('^2')">x^2</button>
+    <button onclick="append_op('^(-1)')">x^(-1)</button>
+    <button onclick="append_op('sqrt[')">sqrt(x)</button>
+    <button onclick="append_op('!')">fact(x)</button>
+    <br>
+    <button onclick="append_op('*10^[')">x10^x</button>
+
 </div></div>
 </body>
 </html>
