@@ -6,21 +6,21 @@ let result='';  //for debugging, put all values 0 or something
 function append(value)
 {
     current_input += value;
-    document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
+    document.getElementById('display1').value=`${previous_input} ${current_operation} ${current_input}`;
 }
 function append_op(operator)
 { 
     if((operator=='-' || operator=='+') && (current_input==='' && previous_input==='')){  
         current_input+=operator;//to do -3+5=2
-        document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
+        document.getElementById('display1').value=`${previous_input} ${current_operation} ${current_input}`;
         return;
     }
-     if(previous_input !== '' && current_input !== '')
+     if(previous_input !== '')
         calculate();
     current_operation=operator;
     previous_input=current_input;
     current_input='';
-    document.getElementById('display').value=`${previous_input} ${current_operation}`;
+    document.getElementById('display1').value=`${previous_input} ${current_operation}`;
 }
 function toRadian(degree) {
     return degree * (Math.PI / 180);
@@ -136,15 +136,17 @@ function calculate()
             result=Math.log(current_input)/Math.log(previous_input);
             break;  
         case '^2':
-            result=Math.pow(previous_input,2);
+            result=Math.pow(previous,2);
             break;
+        case '^(-1)':
+            result=Math.exp(previous,-1);
         default:
             return;
     }
     current_input=result.toString();
     previous_input='';
     current_operation='';  
-    document.getElementById('display').value=`${result}`;
+    document.getElementById('display2').value=`${result}`;
 }
 function clearDisplay(){
     //In the browser, clear() is not reserved, but window.clear is actually 
@@ -154,20 +156,20 @@ function clearDisplay(){
     previous_input='';
     current_operation='';
     result='';
-    document.getElementById('display').value='0';
+    document.getElementById('display1').value='0';
 }
 function ans(){
     current_input=result.toString();
-    document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
+    document.getElementById('display1').value=`${previous_input} ${current_operation} ${current_input}`;
 }
 function backspace(){
     current_input=current_input.slice(0,-1);
     if(current_input===''){
         current_input='0';
-        document.getElementById('display').value=`${previous_input} ${current_operation}`;
+        document.getElementById('display1').value=`${previous_input} ${current_operation}`;
     }
     else{
-        document.getElementById('display').value=`${previous_input} ${current_operation} ${current_input}`;
+        document.getElementById('display1').value=`${previous_input} ${current_operation} ${current_input}`;
     }
 }
  //doesent work below

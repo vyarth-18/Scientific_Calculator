@@ -66,13 +66,21 @@ body
     margin-top: 5%;
     margin-left:5%;
 }
-.display{
+.display1{
     background-color: #F5F0CD;
     color : rgb(0, 0, 0);
-    height: 8em;
+    height: 4em;
     width: 45%;
-    padding-top: 5px;
-    padding-left: 5px;
+    padding: 5px;
+    margin-top: 30px;
+    font-size: 2em;
+}
+.display2{
+    background-color: #F5F0CD;
+    text-align: right;
+    color : rgb(0, 0, 0);
+    height: 4em;
+    width: 45%;
     padding: 5px;
     margin-bottom: 30px;
     font-size: 2em;
