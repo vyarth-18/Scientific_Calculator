@@ -1,77 +1,12 @@
+# React + Vite
 
-# 🧪 Scientific Calculator
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Welcome to your nerdy little number-crunching friend! 🤓  
-This is a **Scientific Calculator** built with good ol' **HTML, CSS, and JavaScript** – no libraries, no frameworks, just pure brainpower and browser magic.
+Currently, two official plugins are available:
 
----
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🎉 What It Can Do
+## Expanding the ESLint configuration
 
-This calculator isn’t just about `2 + 2 = 4` — it’s got *skills*:
-
-✅ Basic math: `+`, `-`, `*`, `/`  
-📐 Trig functions: `sin`, `cos`, `tan`, etc.  
-🔢 Powers and roots: `x²`, `√x`, `x^y`  
-🧮 Logs and natural logs: `log`, `ln`  
-
----
-
-## ⚙️ How to Use It
-
-1. **Clone this bad boy**  
-   ```bash
-   git clone https://github.com/vyarth-18/Scientific_Calculator.git
-   cd scientific-calculator
-   ```
-
-2. **Double-click `index.html`**  
-   Or right-click → Open With → Your Favorite Browser.  
-   Boom, you're calculating.
-
----
-
-## 🧠 Under the Hood
-
-Everything’s powered by JavaScript and the mighty `Math` object.  
-For example:
-
-```js
-Math.sin(angleInRadians);
-Math.pow(base, exponent);
-Math.log(number); // Natural log
-```
-
-The UI is handled with basic CSS and a bit of flexbox/fancy styling. No Bootstrap here, just raw, uncut styles.
-
----
-
-## 💡 Future Plans (maybe)
-
-- ✅ Dark mode (because eyes are important)
-- ✅ History log of calculations
-- ✅ Keyboard support (for the speed typers)
-- ✅ More Easter eggs 👀
-
----
-
-## 🙌 Want to Contribute?
-
-Fork it, improve it, break it, fix it, or add something weird.  
-Pull requests are always welcome – even if it's just adding a 🦄 somewhere.
-
----
-
-## 📝 License
-
-This project is under the [GNU License](LICENSE).  
-So yeah, go wild. Just don’t sell it and say you invented math.
-
----
-
-## ✨ Fun Fact
-
-The calculator doesn’t judge your math skills.  
-Get that `cos(90)` wrong? It's fine. We’ve all been there.
-
----
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

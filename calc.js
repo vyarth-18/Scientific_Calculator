@@ -139,7 +139,7 @@ function calculate()
             result=Math.pow(previous,2);
             break;
         case '^(-1)':
-            result=Math.exp(previous,-1);
+            result=1/previous;
         default:
             return;
     }
@@ -149,7 +149,7 @@ function calculate()
     document.getElementById('display2').value=`${result}`;
 }
 function clearDisplay(){
-    //In the browser, clear() is not reserved, but window.clear is actually 
+    //In the browser, clear() is not reserved, but window.clear is  
     // already defined in some environments, especially in dev tools or 
     // specific libraries.
     current_input='';
@@ -157,6 +157,7 @@ function clearDisplay(){
     current_operation='';
     result='';
     document.getElementById('display1').value='0';
+    document.getElementById('display2').value='0';
 }
 function ans(){
     current_input=result.toString();
